@@ -1,0 +1,19 @@
+//
+   Created with JetBrains WebStorm.
+   User: yoshiyuki
+   Date: 2012/10/20
+   Time: 1:10
+   To change this template use File | Settings | File Templates.
+extends layout
+block content
+
+    h1 mongoTest
+    h2 AddNewData
+    form(action='/edit',method='post')
+        input(type='text',name='aniTitle')
+        input(type='submit',value='追加')
+    h2 Animelist
+    ul//
+        if list
+            each item in list
+                li=item.aniTitle
