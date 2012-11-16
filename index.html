@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang = "ja">
+
+	<head>
+		<meta charset = "utf-8">
+		<title>project-R</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+	
+	<body style = "padding-top:60px">
+	
+		<div class = "container">
+		
+		<div class = "navbar navbar-inverse navbar-fixed-bottom">
+			<div class = "navbar-inner">
+			<div class = "container">
+			
+				<a href = "" class = "brand">project-R</a>
+				
+				<ul class = "nav">
+					<li class = "active"><a href = "index.html">基本情報</a></li>
+					<li><a href = "character.html">キャラクター・声優</a></li>
+					<li><a href = "staff.html">スタッフ</a></li>
+					<li><a href = "goods.html">グッズ</a></li>
+					<li><a href = "mediamix.html">メディアミックス</a></li>
+				</ul>
+				
+			</div>
+			</div>
+		</div>
+		
+		
+		<div class = "row-fluid">
+			<div class = "span10  offset1 hero-unit">
+				<h2>Form</h2>
+				
+				<form class="form-horizontal">
+				
+					<fieldset>
+					
+					<legend>Anime Data</legend>
+					
+					<div class="control-group">
+						<label class="control-label" for="input01">タイトル</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" id="input01">
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="textarea">あらすじ</label>
+						<div class="controls">
+							<textarea class="input-xlarge" id="textarea" rows="3"></textarea>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="optionsCheckbox">原作</label>
+						<div class="controls">
+							<label class="checkbox">
+								<input type="checkbox" id="optionsCheckbox1" value="option1">あり
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="optionsCheckbox2" value="option2">なし
+							</label>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="select01">放送話数</label>
+						<div class="controls">
+							<select id="select01">
+								<option>話数</option>
+								<option>1</option>
+								<option>2</option>
+								<option>4</option>
+								<option>12</option>
+								<option>13</option>
+								<option>25</option>
+								<option>26</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="multiSelect">曜日</label>
+						<div class="controls">
+							<select multiple="multiple" id="multiSelect">
+								<option>月</option>
+								<option>火</option>
+								<option>水</option>
+								<option>木</option>
+								<option>金</option>
+								<option>土</option>
+								<option>日</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="input01">放送時間</label>
+						<div class="controls">
+							<input type="text" class="input-mini" id="input02">
+							～
+							<input type="text" class="input-mini" id="input03">
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="select01">放送開始</label>
+						<div class="controls">
+							<select id="year">
+								<option>年</option>
+								<option>2012</option>
+								<option>2011</option>
+								<option>2010</option>
+								<option>2009</option>
+								<option>2008</option>
+								<option>2007</option>
+								<option>2006</option>
+								<option>2005</option>
+								<option>2004</option>
+								<option>2003</option>
+							</select>
+						</div>
+						
+						<div class="controls">
+							<select id="month">
+								<option>月</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+							</select>
+						</div>
+						
+						<div class="controls">
+							<select id="date">
+								<option>日</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+								<option>24</option>
+								<option>25</option>
+								<option>26</option>
+								<option>27</option>
+								<option>28</option>
+								<option>29</option>
+								<option>30</option>
+								<option>31</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="select01">放送終了</label>
+						<div class="controls">
+							<select id="year">
+								<option>年</option>
+								<option>2012</option>
+								<option>2011</option>
+								<option>2010</option>
+								<option>2009</option>
+								<option>2008</option>
+								<option>2007</option>
+								<option>2006</option>
+								<option>2005</option>
+								<option>2004</option>
+								<option>2003</option>
+							</select>
+						</div>
+						
+						<div class="controls">
+							<select id="month">
+								<option>月</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+							</select>
+						</div>
+						
+						<div class="controls">
+							<select id="date">
+								<option>日</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+								<option>24</option>
+								<option>25</option>
+								<option>26</option>
+								<option>27</option>
+								<option>28</option>
+								<option>29</option>
+								<option>30</option>
+								<option>31</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="input01">オープニングテーマ</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" id="input01">
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="input01">エンディングテーマ</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" id="input01">
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="input01">公式ウェブサイト</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" id="input01">
+						</div>
+					</div>
+					
+					
+					<div class="control-group">
+						<label class="control-label" for="fileInput">サムネイル</label>
+						<div class="controls">
+							<input class="input-file" id="fileInput" type="file">
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label" for="textarea">備考</label>
+						<div class="controls">
+							<textarea class="input-xlarge" id="textarea" rows="3"></textarea>
+						</div>
+					</div>
+					
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">Send</button>
+						<button class="btn">Cancel</button>
+					</div>
+					
+					</fieldset>
+					
+					
+				</form>
+			</div>
+		</div>
+		
+		
+		</div>
+	
+	</body>
+	
+</html>
