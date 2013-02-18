@@ -4,6 +4,7 @@ import java.util.List;
 public class Anime {
 	//リスト
 	private List<AnimeList> anime;
+	private int animeNumber;
 	
 	//アニメリストの内部
 	class AnimeList {
@@ -37,5 +38,13 @@ public class Anime {
 
 	public void setAnime(List<AnimeList> anime) {
 		this.anime = anime;
+	}
+
+	public int getAnimeNumber() {
+		return animeNumber;
+	}
+
+	public void setAnimeNumber(int animeNumber) {
+		this.animeNumber = animeNumber;
 	}
 }
