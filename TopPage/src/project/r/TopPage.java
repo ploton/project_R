@@ -12,10 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.loopj.android.image.SmartImageView;
 
 
 @TargetApi(9)
@@ -30,27 +27,30 @@ public class TopPage extends Activity
 
 	//アニメのタイトルを入れる文字列箱
 	String[] anitit = new String[50];
-	//アニメ画像のURLを入れる箱
-	String[] animage = new String[50];
+	
+	//トップアニメ型を定義
+	TopAnime mDatas[];
+	
 
 
 	public class TopAnime {
-		String iconId;
 		String title;
+		int number; //これはどれをクリックしたのか判別するための数字
+		//int iconId;
 		//Bitmap draw;
 
-		TopAnime(String str, String s) {
+		TopAnime(String s, int n) { //本当は画像などの要素も入れたかったが今は割愛
+			this.title = s;
+			this.number = n;
 			//this.draw = d;
 			//this.iconId = id;  
-			this.title = s;  
-			this.iconId = str;
 		}  
 	}
 
 	static class ViewHolder {
 		TextView textView;
-		ImageView imageView;
-		SmartImageView iCon;
+		//ImageView imageView;
+		//SmartImageView iCon;
 	}
 
 	//配列のクラス型を元にレイアウトを形作る
@@ -72,9 +72,9 @@ public class TopPage extends Activity
 			{
 				convertView = inflater.inflate(layoutId, parent, false);
 				holder = new ViewHolder();
-				holder.textView = (TextView) convertView.findViewById(R.id.textview);
+				holder.textView = (TextView) convertView.findViewById(R.id.text_item);
 				//holder.imageView = (ImageView) convertView.findViewById(R.id.imageview);
-				holder.iCon = (SmartImageView) convertView.findViewById(R.id.icon);
+				//holder.iCon = (SmartImageView) convertView.findViewById(R.id.icon);
 				convertView.setTag(holder);
 			} else {
 				holder = (ViewHolder) convertView.getTag();
@@ -82,8 +82,7 @@ public class TopPage extends Activity
 			TopAnime data = getItem(position);
 			holder.textView.setText(data.title);
 			//holder.imageView.setImageBitmap(data.draw);
-			holder.iCon.setImageUrl(data.iconId);
-			System.out.println("アイコンをholderに入れたぞー");
+			//holder.iCon.setImageUrl(data.iconId);
 			
 			return convertView;  
 		}
@@ -103,10 +102,11 @@ public class TopPage extends Activity
 		Anime anites = JSON.decode(getj.takeJson(loadURL), Anime.class);
 	
 		//タイトルの文字列箱に実際の文字列をブチコム
-		for(int i = 0; i < 5; i++)
+		for(int i = 0; i < anites.getAnimeNumber(); i++)
 		{
 			anitit[i] = anites.getAnime().get(i).getTitle();
 		}
+
 		//画像を読み込んで当てはめる
 		/*
 		for(int i = 0; i < anites.getAnimeNumber(); i++)
@@ -114,19 +114,24 @@ public class TopPage extends Activity
 			animage[i] = "http://api.twitter.com/1/users/profile_image?screen_name=" + anites.getAnime().get(i).getHash_tag() + "&size=mini";
 		}
 		*/
-		animage[0] = "http://api.twitter.com/1/users/profile_image?screen_name=jamjam_tqn&size=mini";
-		animage[1] = "http://api.twitter.com/1/users/profile_image?screen_name=jamjam_hobby&size=mini";
-		System.out.println("URLを書き込んだぞー");
-		TopAnime[] mDatas = {
-				new TopAnime(animage[0], anitit[0]),  
-				new TopAnime(animage[1], anitit[1]),  
-				//new TopAnime(android.R.drawable.ic_menu_add, anitit[2]),  
-				//new TopAnime(android.R.drawable.ic_menu_add, anitit[3]),
-				//new TopAnime(android.R.drawable.ic_menu_add, anitit[4]),
-		};
 		
-		GridView gridview = (GridView) findViewById(R.id.gridview);  
+		//TopAnimeクラスを生成し、中身をブチ込む。
+		TopAnime mDatas[] = new TopAnime[anites.getAnimeNumber()];
+		for(int i = 0; i < anites.getAnimeNumber(); i++)
+		{
+			mDatas[i] = new TopAnime(anitit[i], i);
+		}
+		
+		GridView gridview = (GridView) findViewById(R.id.gridview);
 		gridview.setAdapter(new MyAdapter(this, R.layout.item, mDatas));
-		
+
+	}
+	
+	public void onClick(View v)
+	{
+		if(v.getId() == R.id.text_item)
+		{
+			System.out.println("テスト");
+		}
 	}
 }

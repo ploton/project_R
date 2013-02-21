@@ -1,20 +1,17 @@
 package project.r;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+/*
+ * 使用していないクラスです。
+ * アイコンの画像を取得するためのものですがうまく行かず頓挫。
+ * しばらくしたら実装予定なので放置。
+ */
 
+
+/*
 //@TargetApi(Build.VERSION_CODES.GINGERBREAD)
 //@SuppressLint("NewApi")
 public class IconCatch extends Activity {
-    
-	
-	/*
 	@SuppressLint("NewApi")
 	public Drawable takeIcon(String id)
 	{
@@ -48,35 +45,13 @@ public class IconCatch extends Activity {
             return null;
         }
     }
-    */
     
-	
-
 	
 	public Bitmap loadImage(String str)
 	{
-		/*
-		Drawable d = null;
-		try{
-	        URL url = new URL("http://api.twitter.com/1/users/profile_image?screen_name=" + str + "&size=mini");
-	        HttpURLConnection http = (HttpURLConnection)url.openConnection();
-	        http.setRequestMethod("GET");
-	        http.connect();
-	        InputStream in = http.getInputStream();
-	        d = Drawable.createFromStream(in, "a");
-	                in.close();
-	   }catch(Exception e){
-	   }
-	   d.setBounds(20, 20, 143, 59);
-	   return d;
-	   */
-	
-	
-		
 		String ulrStr = "http://api.twitter.com/1/users/profile_image?screen_name=" + str + "&size=mini";
 		
 		try { 
-			System.out.println("try入ったよ");
 			URL url = new URL(ulrStr); 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection(); 
 
@@ -85,15 +60,12 @@ public class IconCatch extends Activity {
 
 			InputStream input = connection.getInputStream();
 			Bitmap myBitmap = BitmapFactory.decodeStream(input); 
-			System.out.println("インプットしたよ");
 			return myBitmap;
 		} catch (IOException e) {
 			//画像が大きすぎたりする場合
 			e.printStackTrace(); 
 			return null;
 		}
-		
-
 	}
-	
 }
+*/

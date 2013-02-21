@@ -8,6 +8,14 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+/*
+ * Jsonから要素を取ってくるためのクラスです。
+ * onCreateの直後に
+ * Anime anites = JSON.decode(getj.takeJson(loadURL), Anime.class);
+ * とか入れればおｋです。
+ */
+
+
 public class JsonCatch{
 	
 	public String takeJson(String u){
