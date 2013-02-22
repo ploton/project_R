@@ -42,38 +42,6 @@ public class MainActivity extends Activity {
         
         System.out.println(anites.getAnime().get(0).getHash_tag());
    
-        
-        /*
-        try {
-			JSONObject jObject = new JSONObject(jsonStr);
-			JSONObject anime = jObject.getJSONObject("anime");
-			String title = anime.getString("title");
-			String hash = anime.getString("hash_tag");
-			
-			//レイアウトに表示するテキストビュー
-	        TextView web = new TextView(this);
-	        web.setText(title + hash);
-	        setContentView(web);
-		} catch (JSONException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-			System.out.println("例外だよ");
-		}
-        //sendj.postJson(postURL, postStr);
-        */
-    }
-    
-  //読み込みを実行する関数
-    /*
-  	public void readJson(String u){
-  		String json;
-  	    //GSONクラスを定義
-  		Gson gson = new Gson();
-  		json = getj.takeJson(u); //そのURLから読み込んだ文字列をjson変数にぶち込む
-  		btooom = gson.fromJson(json.toString(), Anime.class); //GSONで文字列をJSON型に変換、pageに埋め込み！
-  	}
-  	*/
-
   	//ページを開くメソッド
   	public void openSite(){
   		WebView webView = new WebView(this);

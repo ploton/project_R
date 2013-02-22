@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">GreenT</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="twitter_oauth">Twitter認証</string>
+    <string name="twitter_consumer_key">6xZj4hzdTWmz2dMHLsWRQ</string>
+    <string name="twitter_consumer_secret">7ZFULbwsmPP60U8P7ZEspeDf7xXXwAPEmnF8QH4YRE</string>
+    <string name="twitter_callback_url">oauth://com</string>
+    <string name="menu_tweet">つぶやく</string>
+    <string name="menu_refresh">更新</string>
+
+</resources>
